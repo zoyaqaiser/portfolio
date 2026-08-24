@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zoya Qaiser — Digital Marketing & SEO</title>
+<meta name="description" content="Zoya Qaiser — Digital Marketing & SEO specialist in Lahore, Pakistan.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0B0A16;
+    --bg-alt:#100E1F;
+    --card:#161428;
+    --card-2:#1B1832;
+    --line: rgba(255,255,255,0.08);
+    --text:#EDEDF5;
+    --muted:#9C9AB5;
+    --purple:#8B5CF6;
+    --blue:#5B7FFF;
+    --grad: linear-gradient(135deg, var(--purple), var(--blue));
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter', sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:1100px; margin:0 auto; padding:0 24px;}
+  ::selection{background:var(--purple); color:#fff;}
+  img{max-width:100%; display:block;}
+
+  /* ---------- NAV ---------- */
+  nav.top{
+    position:sticky; top:0; z-index:50;
+    background:rgba(11,10,22,0.85);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:1100px; margin:0 auto; padding:18px 24px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .brand{
+    font-family:'JetBrains Mono', monospace;
+    font-size:16px; font-weight:600;
+    display:flex; align-items:center; gap:8px;
+  }
+  .brand .tag{color:var(--purple);}
+  .nav-links{
+    display:flex; gap:30px;
+    font-size:14px; color:var(--muted); font-weight:500;
+  }
+  .nav-links a:hover{color:var(--text);}
+  @media (max-width:720px){ .nav-links{display:none;} }
+  .btn{
+    font-size:13.5px; font-weight:600;
+    padding:11px 22px;
+    border-radius:8px;
+    display:inline-flex; align-items:center; gap:8px;
+    border:1px solid transparent;
+    transition:transform .15s ease, box-shadow .15s ease, opacity .15s ease;
+  }
+  .btn:hover{transform:translateY(-1px);}
+  .btn-solid{background:var(--grad); color:#fff; box-shadow:0 8px 22px rgba(139,92,246,0.28);}
+  .btn-solid:hover{opacity:.92;}
+  .btn-outline{border-color:var(--line); color:var(--text); background:transparent;}
+  .btn-outline:hover{border-color:var(--purple);}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding:80px 0 60px;
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:40px;
+    align-items:center;
+  }
+  @media (max-width:860px){ .hero{grid-template-columns:1fr; padding:50px 0 40px;} }
+  .badge{
+    display:inline-block;
+    font-size:12.5px; font-weight:600;
+    color:var(--purple);
+    background:rgba(139,92,246,0.12);
+    border:1px solid rgba(139,92,246,0.3);
+    padding:6px 14px;
+    border-radius:999px;
+    margin-bottom:18px;
+  }
+  .hero h1{
+    font-family:'Sora', sans-serif;
+    font-size:clamp(34px, 5.5vw, 52px);
+    font-weight:700;
+    line-height:1.12;
+    margin-bottom:10px;
+  }
+  .hero h1 .accent{
+    background:var(--grad);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
+  .hero .lead{
+    font-family:'Sora', sans-serif;
+    font-size:clamp(20px, 3vw, 26px);
+    font-weight:600;
+    color:var(--text);
+    margin-bottom:16px;
+  }
+  .hero p.desc{
+    color:var(--muted);
+    font-size:15.5px;
+    max-width:48ch;
+    margin-bottom:28px;
+  }
+  .hero-cta{display:flex; flex-wrap:wrap; gap:14px; margin-bottom:36px;}
+  .tools-label{
+    font-family:'JetBrains Mono', monospace;
+    font-size:11.5px; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--muted); margin-bottom:14px;
+  }
+  .tool-icons{display:flex; gap:14px; flex-wrap:wrap;}
+  .tool-icon{
+    width:44px; height:44px;
+    border-radius:10px;
+    background:var(--card);
+    border:1px solid var(--line);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'JetBrains Mono', monospace;
+    font-weight:700; font-size:13px;
+    color:var(--text);
+  }
+
+  /* hero visual */
+  .hero-visual{position:relative; display:flex; align-items:center; justify-content:center; min-height:340px;}
+  .blob{
+    position:absolute;
+    width:320px; height:320px;
+    border-radius:50%;
+    background:radial-gradient(circle at 35% 30%, rgba(139,92,246,0.55), rgba(91,127,255,0.15) 60%, transparent 75%);
+    filter:blur(6px);
+  }
+  .code-card{
+    position:relative;
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:14px;
+    width:100%; max-width:340px;
+    box-shadow:0 20px 60px rgba(0,0,0,0.45);
+    overflow:hidden;
+  }
+  .code-card .cc-head{
+    display:flex; align-items:center; gap:8px;
+    padding:12px 14px;
+    background:var(--card-2);
+    border-bottom:1px solid var(--line);
+  }
+  .cc-dot{width:9px; height:9px; border-radius:50%;}
+  .cc-dot.r{background:#FF5F57;} .cc-dot.y{background:#FEBC2E;} .cc-dot.g{background:#28C840;}
+  .code-card pre{
+    padding:18px 16px;
+    font-family:'JetBrains Mono', monospace;
+    font-size:12.5px;
+    line-height:1.75;
+    color:#C9C6E8;
+    overflow-x:auto;
+  }
+  .code-card .kw{color:#8B93FF;} .code-card .str{color:#7FE7C4;} .code-card .prop{color:#B8B4E0;}
+  .status-pill{
+    position:absolute; top:-14px; right:-10px;
+    background:var(--grad);
+    color:#fff; font-family:'JetBrains Mono', monospace;
+    font-size:11px; font-weight:600;
+    padding:7px 12px; border-radius:999px;
+    display:flex; align-items:center; gap:6px;
+    box-shadow:0 8px 20px rgba(139,92,246,0.35);
+  }
+  .status-pill .dot{width:6px; height:6px; border-radius:50%; background:#fff;}
+
+  /* ---------- SECTIONS ---------- */
+  section{padding:70px 0;}
+  section + section{border-top:1px solid var(--line);}
+  .eyebrow{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12px; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--purple); text-align:center; margin-bottom:8px;
+  }
+  h2.section-title{
+    font-family:'Sora', sans-serif;
+    font-size:clamp(24px, 3.5vw, 32px);
+    font-weight:700;
+    text-align:center;
+    margin-bottom:44px;
+  }
+
+  /* about */
+  .about-grid{
+    display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center;
+  }
+  @media (max-width:800px){ .about-grid{grid-template-columns:1fr;} }
+  .about-grid > div:first-child p{color:var(--muted); font-size:15px; margin-bottom:14px; max-width:50ch;}
+  .stat-grid{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  .stat{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:20px;
+    display:flex; align-items:center; gap:14px;
+  }
+  .stat .icon{
+    width:42px; height:42px; border-radius:10px;
+    background:rgba(139,92,246,0.14);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Sora', sans-serif; color:var(--purple); font-weight:700;
+    flex-shrink:0;
+  }
+  .stat .num{font-family:'Sora', sans-serif; font-size:22px; font-weight:700; display:block;}
+  .stat .label{font-size:12.5px; color:var(--muted);}
+
+  /* skills */
+  .skills-grid{
+    display:grid; grid-template-columns:1fr 1fr 1fr; gap:32px 40px;
+  }
+  @media (max-width:760px){ .skills-grid{grid-template-columns:1fr;} }
+  .skill{margin-bottom:20px;}
+  .skill-row{display:flex; justify-content:space-between; font-size:14px; margin-bottom:8px;}
+  .skill-row .pct{color:var(--muted); font-family:'JetBrains Mono', monospace; font-size:12.5px;}
+  .bar{height:7px; background:var(--card-2); border-radius:99px; overflow:hidden;}
+  .bar-fill{height:100%; border-radius:99px; background:var(--grad);}
+
+  /* projects */
+  .project-grid{
+    display:grid; grid-template-columns:repeat(3, 1fr); gap:22px;
+  }
+  @media (max-width:860px){ .project-grid{grid-template-columns:1fr;} }
+  .project-card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:14px;
+    overflow:hidden;
+    display:flex; flex-direction:column;
+  }
+  .project-thumb{
+    height:130px;
+    background:var(--grad);
+    position:relative;
+    display:flex; align-items:flex-start; justify-content:space-between;
+    padding:14px 16px;
+  }
+  .project-thumb .idx{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12px; font-weight:600; color:rgba(255,255,255,0.85);
+    background:rgba(0,0,0,0.2);
+    padding:3px 9px; border-radius:999px;
+  }
+  .project-thumb .kicker{
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px; color:rgba(255,255,255,0.85);
+    align-self:flex-end;
+  }
+  .project-body{padding:20px; display:flex; flex-direction:column; gap:8px; flex:1;}
+  .project-body h3{font-family:'Sora', sans-serif; font-size:16.5px; font-weight:700;}
+  .project-body p{font-size:13.8px; color:var(--muted); flex:1;}
+  .project-body .meta{
+    font-family:'JetBrains Mono', monospace; font-size:11.5px; color:var(--purple);
+  }
+  .project-link{
+    margin-top:8px; font-size:13px; font-weight:600; color:var(--text);
+    display:inline-flex; align-items:center; gap:6px;
+  }
+  .project-link:hover{color:var(--purple);}
+
+  /* certifications */
+  .cert-grid{display:grid; grid-template-columns:repeat(4, 1fr); gap:16px;}
+  @media (max-width:760px){ .cert-grid{grid-template-columns:1fr 1fr;} }
+  .cert{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:18px 16px;
+    text-align:center;
+  }
+  .cert .badge-icon{
+    width:36px; height:36px; margin:0 auto 12px;
+    border-radius:9px;
+    background:var(--grad);
+    display:flex; align-items:center; justify-content:center;
+    color:#fff; font-family:'Sora', sans-serif; font-weight:700; font-size:13px;
+  }
+  .cert h4{font-size:13px; font-weight:600; margin-bottom:4px;}
+  .cert span{font-size:11.5px; color:var(--muted);}
+  .cert a.viewcert{display:block; margin-top:10px; font-size:11.5px; color:var(--purple); font-weight:600;}
+
+  /* contact */
+  .contact-panel{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:50px 30px;
+    text-align:center;
+  }
+  .contact-panel h2{font-family:'Sora', sans-serif; font-size:28px; font-weight:700; margin-bottom:12px;}
+  .contact-panel p{color:var(--muted); max-width:46ch; margin:0 auto 28px; font-size:15px;}
+  .contact-buttons{display:flex; flex-wrap:wrap; justify-content:center; gap:14px;}
+
+  footer{padding:40px 0 60px; text-align:center;}
+  footer .socials{display:flex; justify-content:center; gap:16px; margin-bottom:18px;}
+  footer .socials a{
+    width:38px; height:38px; border-radius:10px;
+    border:1px solid var(--line);
+    display:flex; align-items:center; justify-content:center;
+    font-size:14px; color:var(--muted);
+  }
+  footer .socials a:hover{color:var(--purple); border-color:var(--purple);}
+  footer .fine{font-size:12.5px; color:var(--muted);}
+</style>
+</head>
+<body>
+
+<nav class="top" id="top">
+  <div class="nav-inner">
+    <div class="brand"><span class="tag">&lt;/&gt;</span> Zoya Qaiser</div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a class="btn btn-solid" href="#contact">Hire Me ↗</a>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <!-- HERO -->
+  <section class="hero" style="border-top:none;">
+    <div>
+      <span class="badge">I'M A DIGITAL MARKETER</span>
+      <h1>Hi, I'm <span class="accent">Zoya</span></h1>
+      <div class="lead">I grow brands online.</div>
+      <p class="desc">I specialize in Digital Marketing, SEO, content strategy, and visual campaigns helping brands and nonprofits build audience-focused marketing backed by research and creativity.</p>
+      <div class="hero-cta">
+        <a class="btn btn-solid" href="https://www.behance.net/zoyaqaiser" target="_blank" rel="noopener">View My Work ↗</a>
+        <a class="btn btn-outline" href="#contact">Get In Touch</a>
+      </div>
+      <div class="tools-label">Tools I Work With</div>
+      <div class="tool-icons">
+        <div class="tool-icon" title="SEO">Ahref</div>
+        <div class="tool-icon" title="Html,CSS,JavaScript">Code</div>
+        <div class="tool-icon" title="AdobePhotoshop">Ps</div>
+        <div class="tool-icon" title="Canva">Canva</div>
+        <div class="tool-icon" title="Semrush">Sr</div>
+        <div class="tool-icon" title="APIClaude,APIChatgpt,Grok,Copilot">AI</div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="blob"></div>
+      <div class="code-card">
+        <span class="status-pill"><span class="dot"></span>Open to work</span>
+        <div class="cc-head">
+          <span class="cc-dot r"></span><span class="cc-dot y"></span><span class="cc-dot g"></span>
+        </div>
+        <pre><span class="kw">const</span> marketer = {
+  <span class="prop">name</span>: <span class="str">"Zoya"</span>,
+  <span class="prop">focus</span>: [<span class="str">"SEO"</span>, <span class="str">"Content"</span>,
+    <span class="str">"Brand Design"</span>],
+  <span class="prop">tools</span>: [<span class="str">"WordPress"</span>, <span class="str">"Semrush"</span>,
+    <span class="str">"Photoshop"</span>, <span class="str">"Canva"</span>],
+  <span class="prop">basedIn</span>: <span class="str">"Lahore, PK"</span>,
+  <span class="prop">mission</span>: <span class="str">"Get your brand ranking"</span>
+};</pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="eyebrow">About Me</div>
+    <h2 class="section-title">I'm passionate about growing brands that matter</h2>
+    <div class="about-grid">
+      <div>
+        <p>I specialize in Digital Marketing, SEO, content strategy, and visual communication building audience-focused campaigns that connect brands with the people they're trying to reach.</p>
+        <p>I've managed WordPress content end-to-end and created nonprofit and brand campaign work in Photoshop and Canva, bringing strong organization, creativity, and collaborative communication to every project.</p>
+      </div>
+      <div class="stat-grid">
+        <div class="stat">
+          <div class="icon">4+</div>
+          <div><span class="num">4+</span><span class="label">Certifications Earned</span></div>
+        </div>
+        <div class="stat">
+          <div class="icon">6w</div>
+          <div><span class="num">6 wk</span><span class="label">Marketing Internship</span></div>
+        </div>
+        <div class="stat">
+          <div class="icon">✓</div>
+          <div><span class="num">100%</span><span class="label">Client-Ready Campaigns</span></div>
+        </div>
+        <div class="stat">
+          <div class="icon">4+</div>
+          <div><span class="num">4+</span><span class="label">Tools Mastered</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="eyebrow">My Skills</div>
+    <h2 class="section-title">Skills I Bring to the Table</h2>
+    <div class="skills-grid">
+      <div>
+        <div class="skill">
+          <div class="skill-row"><span>Digital Marketing</span><span class="pct">90%</span></div>
+          <div class="bar"><div class="bar-fill" style="width:90%"></div></div>
+        </div>
+        <div class="skill">
+          <div class="skill-row"><span>Off-Page SEO</span><span class="pct">85%</span></div>
+          <div class="bar"><div class="bar-fill" style="width:85%"></div></div>
+        </div>
+        <div class="skill">
+          <div class="skill-row"><span>On-Page SEO</span><span class="pct">90%</span></div>
+          <div class="bar"><div class="bar-fill" style="width:90%"></div></div>
+        </div>
+      </div>
+      <div>
+        <div class="skill">
+          <div class="skill-row"><span>WordPress</span><span class="pct">85%</span></div>
+          <div class="bar"><div class="bar-fill" style="width:85%"></div></div>
+        </div>
+        <div class="skill">
+          <div class="skill-row"><span>Semrush</span><span class="pct">80%</span></div>
+          <div class="bar"><div class="bar-fill" style="width:80%"></div></div>
+        </div>
+        <div class="skill">
+          <div class="skill-row"><span>AI Marketing Tools</span><span class="pct">80%</span></div>
+          <div class="bar"><div class="bar-fill" style="width:80%"></div></div>
+        </div>
+      </div>
+      <div>
+        <div class="skill">
+          <div class="skill-row"><span>Photoshop</span><span class="pct">85%</span></div>
+          <div class="bar"><div class="bar-fill" style="width:85%"></div></div>
+        </div>
+        <div class="skill">
+          <div class="skill-row"><span>Canva</span><span class="pct">90%</span></div>
+          <div class="bar"><div class="bar-fill" style="width:90%"></div></div>
+        </div>
+        <div class="skill">
+          <div class="skill-row"><span>Marketing Automation</span><span class="pct">75%</span></div>
+          <div class="bar"><div class="bar-fill" style="width:75%"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="eyebrow">Featured Projects</div>
+    <h2 class="section-title">Some of My Recent Work</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <div class="project-thumb"><span class="idx">01</span><span class="kicker">Brand Campaign</span></div>
+        <div class="project-body">
+          <h3>MeltDown — Ice Cream Brand</h3>
+          <p>Designed advertising infographics and social ad creatives, using visual storytelling to strengthen brand identity and engagement.</p>
+          <span class="meta">Photoshop · Canva</span>
+          <a class="project-link" href="https://www.behance.net/zoyaqaiser" target="_blank" rel="noopener">View Project →</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-thumb"><span class="idx">02</span><span class="kicker">Nonprofit Creative</span></div>
+        <div class="project-body">
+          <h3>Alkhidmat Foundation</h3>
+          <p>Produced promotional ad creatives for a nonprofit, aligning visual design with brand messaging and audience targeting.</p>
+          <span class="meta">Photoshop · Canva</span>
+          <a class="project-link" href="https://www.behance.net/zoyaqaiser" target="_blank" rel="noopener">View Project →</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-thumb"><span class="idx">03</span><span class="kicker">SEO & Content</span></div>
+        <div class="project-body">
+          <h3>SEO Blog & Content Strategy</h3>
+          <p>Built and managed a content-driven WordPress blog, planning posts around audience interest, keyword research, and on-page SEO best practices.</p>
+          <span class="meta">WordPress · Semrush</span>
+          <a class="project-link" href="#contact">Ask Me About It →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section id="certifications">
+    <div class="eyebrow">Certifications</div>
+    <h2 class="section-title">Backed by Certified Training</h2>
+    <div class="cert-grid">
+      <div class="cert">
+        <div class="badge-icon">Sr</div>
+        <h4>SEO Fundamentals</h4>
+        <span>Off-Page SEO & AI Essentials · Semrush</span>
+        <a class="viewcert" href="https://static.semrush.com/academy/certificates/bbdfa14144/zoya-qaiser_25.pdf" target="_blank" rel="noopener">View ↗</a>
+      </div>
+      <div class="cert">
+        <div class="badge-icon">Fg</div>
+        <h4>Marketing Explorer</h4>
+        <span>Internship Program · Forage</span>
+        <a class="viewcert" href="https://www.theforage.com/completion-certificates/HcpA6MvY2ca9wDwxe/zDJFavX6Le5Ldsno5_HcpA6MvY2ca9wDwxe_6a2c00bbb5f840cb51ed99bf_1785758539531_completion_certificate.pdf" target="_blank" rel="noopener">View ↗</a>
+      </div>
+      <div class="cert">
+        <div class="badge-icon">Cs</div>
+        <h4>SEO with Squarespace</h4>
+        <span>Coursera</span>
+        <a class="viewcert" href="https://www.coursera.org/account/accomplishments/verify/IBNX53KDGB6Q" target="_blank" rel="noopener">View ↗</a>
+      </div>
+      <div class="cert">
+        <div class="badge-icon">Vp</div>
+        <h4>AI in Action</h4>
+        <span>Job Simulation · Vista Equity / Forage</span>
+        <a class="viewcert" href="https://www.theforage.com/completion-certificates/BotenCEjm3LFxtq9A/EregFenDKXDDeTGR2_BotenCEjm3LFxtq9A_6a2c00bbb5f840cb51ed99bf_1785652711204_completion_certificate.pdf" target="_blank" rel="noopener">View ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="contact-panel">
+      <div class="eyebrow">Let's Work Together</div>
+      <h2>Have a project in mind?</h2>
+      <p>I'm open to internships, freelance campaigns, and SEO or content roles. I usually reply within a day.</p>
+      <div class="contact-buttons">
+        <a class="btn btn-solid" href="mailto:zoyaaqaiser@gmail.com">✉ Email Me</a>
+        <a class="btn btn-outline" href="https://wa.me/923284106283" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="btn btn-outline" href="https://www.behance.net/zoyaqaiser" target="_blank" rel="noopener">Behance ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="socials">
+      <a href="mailto:zoyaaqaiser@gmail.com" title="Email">✉</a>
+      <a href="https://wa.me/923284106283" target="_blank" rel="noopener" title="WhatsApp">☏</a>
+      <a href="https://www.behance.net/zoyaqaiser" target="_blank" rel="noopener" title="Behance">Be</a>
+    </div>
+    <div class="fine">© 2026 Zoya Qaiser. Based in Lahore, Pakistan. · <a href="#top">Back to top ↑</a></div>
+  </footer>
+
+</div>
+
+</body>
+</html>
